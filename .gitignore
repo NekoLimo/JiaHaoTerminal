@@ -1,0 +1,14 @@
+# 构建产物 —— 从源码可重现，不进仓库
+build/
+dist/
+*.spec.bak
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# 测试/临时
+*.log
+.pytest_cache/

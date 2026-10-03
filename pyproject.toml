@@ -1,0 +1,29 @@
+[project]
+name = "jiahao"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "limo2127", email = "luhaoyang12456789@qq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "rich>=15.0.0",
+    "textual==0.85.2",
+    "pyte>=0.8.2",
+    # Windows 没有系统时区数据库，zoneinfo 要靠这个包。
+    # 漏了它 exe 一启动就 ZoneInfoNotFoundError 闪退（真出过）。
+    "tzdata>=2024.1; sys_platform == 'win32'",
+]
+
+[project.scripts]
+jiahao = "jiahao.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.22.3",
+]
