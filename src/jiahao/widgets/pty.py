@@ -358,6 +358,18 @@ class PtyProcess:
         while True:
             chunk = self.read()
             if chunk is None:
+                # ★ EOF。但这一轮**已经读到东西**的话，先把数据交出去，
+                #   EOF 留到下次调用再报。
+                #
+                #   直接 ``return None`` 会把已读到的内容整个丢掉。
+                #   表现是"子进程退出前打的最后一段输出凭空消失" ——
+                #   最典型的就是命令不存在时的 "command not found"。
+                #
+                #   实测：子进程 write 之后立刻 _exit，父进程这一轮
+                #   先读到消息、下一轮才撞上 EIO。老代码于是把消息扔了，
+                #   屏幕上什么都没有。（容器里跑测试抓到的。）
+                if chunks:
+                    break
                 return None
             if not chunk:
                 break
