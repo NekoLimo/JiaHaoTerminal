@@ -36,6 +36,7 @@
 | 代码雨 / 地球 / 业务模块 | ✅ | ✅ | ✅ |
 
 **Linux 和 macOS 完整可用。**
+**jaihaoshell无法作为真正的shell使用**
 
 **Windows**：内嵌终端走 ConPTY（`widgets/conpty.py`），结构布局和调用序列
 都有测试覆盖，但**作者没有 Windows 机器，未经实机验证** —— 第一次跑
