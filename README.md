@@ -1,4 +1,5 @@
 # 超级牛逼嘉豪终端
+一个玩具项目
 
 一个 TUI：左边是内嵌终端（跑自制的 `jiahaoshell`），右边上半是旋转的 ASCII 地球、
 下半是代码雨。附带一批"业务模块"命令。
@@ -36,7 +37,8 @@
 | 代码雨 / 地球 / 业务模块 | ✅ | ✅ | ✅ |
 
 **Linux 和 macOS 完整可用。**
-**jaihaoshell无法作为真正的shell使用**
+
+**⚠️jaihaoshell无法作为真正的shell使用**
 
 **Windows**：内嵌终端走 ConPTY（`widgets/conpty.py`），结构布局和调用序列
 都有测试覆盖，但**作者没有 Windows 机器，未经实机验证** —— 第一次跑
@@ -60,7 +62,7 @@ POSIX 用 `pty.fork()` + master fd，Windows 是另一套 API，差异全部收�
 管道句柄不行，所以 Windows 上只能起一个线程阻塞在 `ReadFile` 上。
 这就是 `PtyProcess.attach_reader()` 这层抽象存在的原因。
 
-## 跑起来
+## 跑
 
 ```bash
 uv run jiahao                 # 启动 TUI
