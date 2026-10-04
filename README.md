@@ -18,12 +18,7 @@
 
 ## ⚠️ AI 生成声明
 
-**本项目的代码由 AI 编程助手生成**（模型 `deepseek-flash`），人类负责提需求、
-做技术决策、**在真机上验证并发现问题**。
-
-这不是走过场 —— 项目里几个最隐蔽的 bug 全都**只有真机运行才暴露**：
-ConPTY 的 `lpValue` 传错（API 全返回成功但读不到数据）、
-`STARTF_USESHANDLES` 让子进程丢掉 stdin、伪控制台不自动关闭导致退不出 TUI。
+**本项目的代码由 DeepSeek Harness 生成**（模型 `deepseek-v4-flash`）
 
 **AI 自己写的测试当时全是绿的。**
 
